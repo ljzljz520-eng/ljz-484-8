@@ -1,0 +1,57 @@
+[
+  {
+    "id": "p-shouyi",
+    "name": "张守义",
+    "gender": "男",
+    "generation": 1,
+    "birthYear": 1928,
+    "deathYear": 2001,
+    "fatherId": null,
+    "motherId": null,
+    "bio": "张家长子，一生务农，兼在村渡口摆渡。话不多，做事稳，是家里的主心骨。"
+  },
+  {
+    "id": "p-xiulan",
+    "name": "李秀兰",
+    "gender": "女",
+    "generation": 1,
+    "birthYear": 1931,
+    "deathYear": 2015,
+    "fatherId": null,
+    "motherId": null,
+    "bio": "张守义之妻。手巧，会纳鞋底、剪窗花，逢年过节家里最忙的人。"
+  },
+  {
+    "id": "p-jianguo",
+    "name": "张建国",
+    "gender": "男",
+    "generation": 2,
+    "birthYear": 1955,
+    "deathYear": null,
+    "fatherId": "p-shouyi",
+    "motherId": "p-xiulan",
+    "bio": "1977 年恢复高考后考上师范，做了三十年乡村教师。"
+  },
+  {
+    "id": "p-guifang",
+    "name": "王桂芳",
+    "gender": "女",
+    "generation": 2,
+    "birthYear": 1957,
+    "deathYear": null,
+    "fatherId": null,
+    "motherId": null,
+    "bio": "张建国之妻，随夫南下闯荡多年，后回乡经营小卖部。"
+  },
+  {
+    "id": "p-xiaofeng",
+    "name": "张晓峰",
+    "gender": "男",
+    "generation": 3,
+    "birthYear": 1982,
+    "deathYear": null,
+    "fatherId": "p-jianguo",
+    "motherId": "p-guifang",
+    "bio": "家中第一个大学生，现居省城，从事软件工作，是这本电子家谱的整理者。"
+  }
+]

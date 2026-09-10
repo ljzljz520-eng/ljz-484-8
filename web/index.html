@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家谱故事整理系统</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>📖 家谱故事整理系统</h1>
+  <nav>
+    <button id="tab-browse" class="tab active">浏 览</button>
+    <button id="tab-edit" class="tab">编 辑</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ========== 浏览模式（仅公开故事） ========== -->
+  <section id="view-browse">
+    <div class="sub-tabs">
+      <button id="sub-person" class="sub-tab active">按人物</button>
+      <button id="sub-era" class="sub-tab">按年代</button>
+    </div>
+    <div id="browse-person" class="browse-panel">
+      <aside id="person-list"></aside>
+      <div id="person-detail" class="detail"><p class="hint">← 请选择一位人物</p></div>
+    </div>
+    <div id="browse-era" class="browse-panel hidden"></div>
+  </section>
+
+  <!-- ========== 编辑模式（可见私密故事） ========== -->
+  <section id="view-edit" class="hidden">
+    <div class="sub-tabs">
+      <button id="sub-edit-people" class="sub-tab active">人物管理</button>
+      <button id="sub-edit-stories" class="sub-tab">故事管理</button>
+    </div>
+
+    <div id="edit-people">
+      <div class="toolbar"><button id="btn-add-person" class="primary">＋ 新增人物</button></div>
+      <table id="people-table">
+        <thead>
+          <tr><th>姓名</th><th>性别</th><th>世代</th><th>生卒</th><th>父母</th><th>操作</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="edit-stories" class="hidden">
+      <div class="toolbar">
+        <button id="btn-add-story" class="primary">＋ 新增故事</button>
+        <span class="hint">🔒 为私密故事，仅在本编辑端可见，浏览端不会显示</span>
+      </div>
+      <div id="story-list"></div>
+    </div>
+  </section>
+</main>
+
+<!-- 人物表单弹窗 -->
+<div id="person-modal" class="modal hidden">
+  <div class="modal-body">
+    <h3 id="person-modal-title">新增人物</h3>
+    <form id="person-form">
+      <input type="hidden" name="id">
+      <label>姓名 *<input name="name" required maxlength="30"></label>
+      <label>性别
+        <select name="gender">
+          <option value="">未知</option>
+          <option>男</option>
+          <option>女</option>
+        </select>
+      </label>
+      <label>世代（第几世）<input name="generation" type="number" value="1" min="1" max="99"></label>
+      <label>出生年<input name="birthYear" type="number" placeholder="如 1935" min="0" max="2100"></label>
+      <label>卒年<input name="deathYear" type="number" placeholder="健在则留空" min="0" max="2100"></label>
+      <label>父亲<select name="fatherId"><option value="">（无）</option></select></label>
+      <label>母亲<select name="motherId"><option value="">（无）</option></select></label>
+      <label class="full">简介<textarea name="bio" rows="3" placeholder="生平、职业、轶事……"></textarea></label>
+      <div class="modal-actions">
+        <button type="button" class="cancel">取消</button>
+        <button type="submit" class="primary">保存</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 故事表单弹窗 -->
+<div id="story-modal" class="modal hidden">
+  <div class="modal-body">
+    <h3 id="story-modal-title">新增故事</h3>
+    <form id="story-form">
+      <input type="hidden" name="id">
+      <label class="full">标题 *<input name="title" required maxlength="60"></label>
+      <label>起始年<input name="yearStart" type="number" placeholder="如 1977" min="0" max="2100"></label>
+      <label>结束年<input name="yearEnd" type="number" placeholder="可留空" min="0" max="2100"></label>
+      <fieldset class="full">
+        <legend>相关人物</legend>
+        <div id="story-person-checks" class="checks"></div>
+      </fieldset>
+      <label class="full checkbox">
+        <input name="isPublic" type="checkbox" checked>
+        公开（不勾选则为私密故事 🔒，仅编辑端可见）
+      </label>
+      <label class="full">正文<textarea name="content" rows="8" placeholder="把这段家族记忆写下来……"></textarea></label>
+      <div class="modal-actions">
+        <button type="button" class="cancel">取消</button>
+        <button type="submit" class="primary">保存</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

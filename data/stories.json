@@ -1,0 +1,68 @@
+[
+  {
+    "id": "s-dukou",
+    "title": "渡口边的少年",
+    "personIds": ["p-shouyi"],
+    "yearStart": 1943,
+    "yearEnd": 1949,
+    "content": "守义十五岁那年，父亲病故，家里欠下药钱。他白天跟船工学摆渡，晚上在油灯下补渔网。渡口的风把人吹得又黑又瘦，可三年后，他硬是撑起了这个家，还把弟弟送进了学堂。老人后来常说：人这一辈子，渡人也是渡己。",
+    "public": true,
+    "createdAt": 1726000000000,
+    "updatedAt": 1726000000000
+  },
+  {
+    "id": "s-jiazhuang",
+    "title": "一车嫁妆",
+    "personIds": ["p-shouyi", "p-xiulan"],
+    "yearStart": 1951,
+    "yearEnd": null,
+    "content": "1951 年冬，秀兰出嫁。嫁妆只有一辆独轮车：两床新棉被、一对木箱、一台缝纫机。守义推着车走了三十里雪路，到村口时棉鞋全湿透了。那台缝纫机后来用了四十年，全家人的衣裳都出自它。",
+    "public": true,
+    "createdAt": 1726000001000,
+    "updatedAt": 1726000001000
+  },
+  {
+    "id": "s-gaokao",
+    "title": "恢复高考那一年",
+    "personIds": ["p-jianguo"],
+    "yearStart": 1977,
+    "yearEnd": 1978,
+    "content": "1977 年 10 月，广播里传来恢复高考的消息。建国白天在生产队干活，夜里点着煤油灯复习，演算纸是用过的化肥袋。第二年春天，他收到了师范学校的录取通知书，是全村第一个。父亲守义把通知书用红布包好，放进了堂屋的木匣。",
+    "public": true,
+    "createdAt": 1726000002000,
+    "updatedAt": 1726000002000
+  },
+  {
+    "id": "s-nanxia",
+    "title": "南下的绿皮火车",
+    "personIds": ["p-jianguo", "p-guifang"],
+    "yearStart": 1992,
+    "yearEnd": 1995,
+    "content": "1992 年春节刚过，建国和桂芳把十岁的儿子托付给老人，挤上了南下的绿皮火车。站台上人挤人，桂芳的鞋被踩掉了一只。在广东的三年，他们睡过工棚、摆过地摊，攒下的钱寄回家翻修了老屋。",
+    "public": true,
+    "createdAt": 1726000003000,
+    "updatedAt": 1726000003000
+  },
+  {
+    "id": "s-quanjiafu",
+    "title": "老屋檐下的全家福",
+    "personIds": ["p-shouyi", "p-xiulan", "p-jianguo", "p-guifang", "p-xiaofeng"],
+    "yearStart": 1998,
+    "yearEnd": null,
+    "content": "1998 年春节，晓峰用攒了半年的奖学金买了一台胶片相机。正月初二，全家五口在老屋屋檐下照了第一张全家福。爷爷守义坚持要穿上那件只有过年才穿的中山装。这张照片如今挂在省城晓峰家的客厅里。",
+    "public": true,
+    "createdAt": 1726000004000,
+    "updatedAt": 1726000004000
+  },
+  {
+    "id": "s-fenjia",
+    "title": "分家风波（内部记录）",
+    "personIds": ["p-shouyi", "p-jianguo"],
+    "yearStart": 1983,
+    "yearEnd": 1984,
+    "content": "1983 年秋收后分家，因老屋地基的划分，兄弟几人争执了近半年，一度互不往来。后经族中长辈调解，立字据为凭，重归于好。此事细节仅作家族内部留存，引以为戒：家和万事兴。",
+    "public": false,
+    "createdAt": 1726000005000,
+    "updatedAt": 1726000005000
+  }
+]

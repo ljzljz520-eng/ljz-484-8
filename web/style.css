@@ -1,0 +1,200 @@
+:root {
+  --bg: #f6f1e7;
+  --panel: #fffdf8;
+  --ink: #38312a;
+  --muted: #8b8071;
+  --accent: #8c3b2e;        /* 印章红 */
+  --accent-soft: #b89b6a;
+  --line: #e6ddc9;
+  --private-bg: #f6ecec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  padding: 14px 28px;
+  background: var(--panel);
+  border-bottom: 3px double var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+}
+
+.tab, .sub-tab {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 6px 18px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.tab.active, .sub-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+main { max-width: 1080px; margin: 0 auto; padding: 20px; }
+
+.sub-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+
+.hidden { display: none !important; }
+.hint { color: var(--muted); font-size: 14px; }
+.meta { color: var(--muted); font-size: 13px; }
+
+/* ---------- 浏览：按人物 ---------- */
+#browse-person { display: flex; gap: 20px; align-items: flex-start; }
+
+#person-list {
+  width: 240px; flex-shrink: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+}
+.gen-title {
+  font-family: "Songti SC", "SimSun", serif;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  margin: 8px 0 4px;
+  padding-bottom: 2px;
+}
+.person-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  width: 100%;
+  border: 0; background: transparent;
+  padding: 6px 8px;
+  cursor: pointer; border-radius: 4px;
+  font-size: 15px; color: var(--ink);
+}
+.person-item:hover { background: #f1e9d8; }
+.person-item.active { background: var(--accent); color: #fff; }
+.person-item.active .pyears { color: #f3e2c7; }
+.pyears { color: var(--muted); font-size: 12px; }
+
+.detail {
+  flex: 1; min-height: 300px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.detail h2 { margin-top: 0; font-family: "Songti SC", "SimSun", serif; }
+.bio { background: #faf5e9; border-left: 3px solid var(--accent-soft); padding: 8px 12px; }
+
+/* ---------- 故事卡片 ---------- */
+.story-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent-soft);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+.story-card h4 { margin: 0 0 2px; font-size: 16px; }
+.story-card header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: 6px;
+}
+.story-card p { margin: 8px 0 0; white-space: pre-wrap; }
+.story-card.private {
+  background: var(--private-bg);
+  border-left-color: var(--accent);
+  border-style: dashed;
+}
+
+/* ---------- 浏览：按年代 ---------- */
+.era-title {
+  font-family: "Songti SC", "SimSun", serif;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 4px;
+}
+
+/* ---------- 编辑 ---------- */
+.toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+
+button.primary {
+  background: var(--accent); color: #fff; border: 0;
+  padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 14px;
+}
+button.small {
+  border: 1px solid var(--line); background: var(--panel);
+  padding: 3px 10px; border-radius: 3px; cursor: pointer; margin-right: 6px;
+}
+button.small.danger { color: var(--accent); border-color: var(--accent); }
+button:hover { filter: brightness(0.94); }
+
+table { width: 100%; border-collapse: collapse; background: var(--panel); }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; font-size: 14px; }
+th { background: #f3ecdc; }
+
+.story-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 4px;
+  padding: 10px 14px; margin-bottom: 8px;
+}
+.story-row.private { background: var(--private-bg); border-style: dashed; }
+.story-row-main { display: flex; flex-direction: column; }
+
+/* ---------- 弹窗 ---------- */
+.modal {
+  position: fixed; inset: 0;
+  background: rgba(40, 32, 24, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+.modal-body {
+  background: var(--panel);
+  border-radius: 8px;
+  border-top: 4px solid var(--accent);
+  padding: 22px 26px;
+  width: min(560px, 92vw);
+  max-height: 88vh;
+  overflow: auto;
+}
+.modal-body h3 { margin-top: 0; font-family: "Songti SC", "SimSun", serif; }
+.modal-body form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.modal-body label { display: flex; flex-direction: column; font-size: 14px; gap: 3px; }
+.modal-body label.full, .modal-body fieldset.full { grid-column: 1 / -1; }
+.modal-body input, .modal-body select, .modal-body textarea {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+.modal-body label.checkbox { flex-direction: row; align-items: center; gap: 8px; }
+.checks { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.checks .check { flex-direction: row; align-items: center; gap: 4px; }
+fieldset { border: 1px solid var(--line); border-radius: 4px; }
+legend { font-size: 13px; color: var(--muted); }
+.modal-actions {
+  grid-column: 1 / -1;
+  display: flex; justify-content: flex-end; gap: 10px;
+  margin-top: 6px;
+}
+.modal-actions .cancel {
+  border: 1px solid var(--line); background: #fff;
+  padding: 8px 18px; border-radius: 4px; cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  #browse-person { flex-direction: column; }
+  #person-list { width: 100%; }
+}
