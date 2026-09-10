@@ -332,13 +332,14 @@ function bind() {
 }
 
 /* ================= 启动 ================= */
+// 启动时只初始化浏览端（公开数据）；编辑端数据（含私密故事）
+// 在用户切换到「编辑」页时由 switchMain('edit') 按需加载，
+// 避免首页加载就请求 publicOnly=false 导致私密数据下发 / 弹出口令框。
 (async function init() {
   bind();
   try {
     await refresh();
     renderPersonList();
-    renderPeopleTable();
-    guard(renderStoryList());
   } catch (err) {
     alert('初始化失败：' + err.message);
   }
